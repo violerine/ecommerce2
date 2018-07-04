@@ -15,7 +15,7 @@
 
   <div id="navbarExampleTransparentExample" class="navbar-menu">
     <div class="navbar-start">
-      <a @click="register" id="registerbutton" class="navbar-item" >
+      <a  @click="register" v-show="$route.path!=='/register'" id="registerbutton" class="navbar-item" >
         Register
       </a>
       <div v-if="this.username=='admin'" class="navbar-item has-dropdown is-hoverable">
@@ -235,7 +235,7 @@ export default {
     },
     checkOut(){
       console.log("MASUK CHECKOUT",this.currentUser)
-      axios.delete(`http://localhost:7000/cart/delete/${this.currentUser}`)
+      axios.delete(`https://ecommerce2.gladysefirina.website/cart/delete/${this.currentUser}`)
       .then(({data})=>{
         console.log("THIS CURRENT USER DI THEN",this.currentUser)
         console.log("MASUK SINI",data)
@@ -265,7 +265,7 @@ export default {
     },
     removeItem(cart){
       var customerId = localStorage.getItem('userId')
-      axios.put(`http://localhost:7000/cart/${customerId}`,{
+      axios.put(`https://ecommerce2.gladysefirina.website/cart/${customerId}`,{
         itemid:cart,
       })
       .then(({data})=>{

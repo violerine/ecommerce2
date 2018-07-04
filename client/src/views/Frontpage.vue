@@ -3,7 +3,7 @@
         <div class="hero-head">
             <nav class="navbar">
             <a class="navbar-item" href="../">
-              <img src="http://bulma.io/images/bulma-type-white.png" alt="Logo">
+              <!-- <img src="" alt="Logo"> -->
             </a>
             </nav>
         </div>

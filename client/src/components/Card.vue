@@ -70,7 +70,7 @@ export default {
       }, 200);
     },
     deleteItem(item){
-      axios.delete(`http://localhost:7000/item/delete/${item._id}`)
+      axios.delete(`https://ecommerce2.gladysefirina.website/item/delete/${item._id}`)
       .then(({data})=>{
         console.log(data)
       })

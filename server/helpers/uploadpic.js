@@ -28,7 +28,7 @@ const sendUploadToGCS = (req, res, next) => {
 
   stream.on('error', (err) => {
     req.file.cloudStorageError = err
-    next(err)
+    res.status(400).send(err)
   })
 
   stream.on('finish', () => {

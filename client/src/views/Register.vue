@@ -59,7 +59,7 @@ export default {
     },
     methods:{
         register(){
-            axios.post('http://localhost:7000/register',{
+            axios.post('https://ecommerce2.gladysefirina.website/register',{
                 name:this.name, 
                 username:this.username, 
                 password:this.password

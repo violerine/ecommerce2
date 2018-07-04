@@ -14,6 +14,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+// router.post('/upload',images.multer.single('image'),
+// images.sendUploadToGCS,(req,res)=>{
+//   res.send({
+//     status:200,                                                                                                                                                                                                                                                                                                                               
+//     message:'Your file uploaded',
+//     link:req.file.cloudStoragePublicUrl
+//   }) 
+// })
+
 router.post('/upload',images.multer.single('image'),
 images.sendUploadToGCS,(req,res)=>{
   res.send({
@@ -22,6 +31,10 @@ images.sendUploadToGCS,(req,res)=>{
     link:req.file.cloudStoragePublicUrl
   }) 
 })
+// router.post('/upload', function(req, res, next) {
+//   res.send('masuk nih')
+  // res.render('index', { title: 'Express' });
+// });
 
 router.post('/add',addNewItem)
 router.get('/get',getAllItems)

@@ -87,14 +87,17 @@ export default {
       },
       uploadPic(){
            const config = {
-                // headers: { 'content-type': 'multipart/form-data' },
+                headers: { 
+                    'content-type': 'multipart/form-data',
+                    'Access-Control-Allow-Origin': '*' },
+                
                 onUploadProgress: function(progressEvent) {
                     var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
                     console.log(percentCompleted)
                     document.getElementById('output').innerHTML = percentCompleted;
                 }
             }
-            axios.post("http://localhost:7000/item/upload",this.formdata,config)
+            axios.post("https://ecommerce2.gladysefirina.website/item/upload",this.formdata,config)
             .then(({data})=>{
                 console.log("masukkkk ga disini")
                 console.log("data",data)
@@ -110,7 +113,7 @@ export default {
             })
       },
         addNewItem(){
-        axios.post("http://localhost:7000/item/add",{
+        axios.post("https://ecommerce2.gladysefirina.website/item/add",{
             item_name:this.item_name,
             item_price:this.item_price,
             item_description:this.item_description,

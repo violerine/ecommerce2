@@ -10,6 +10,7 @@
     "axios": "^0.18.0",
     "axios-progress-bar": "^1.2.0",
     "bulma": "^0.7.1",
+    "firebase": "^5.2.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

@@ -58,7 +58,7 @@ export default {
   },
   methods:{
       login(){
-            axios.post('http://localhost:7000/login',{
+            axios.post('https://ecommerce2.gladysefirina.website/login',{
                 username:this.username, 
                 password:this.password
                 })

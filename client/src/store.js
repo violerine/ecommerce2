@@ -31,7 +31,7 @@ export default new Vuex.Store({
     },
     getCart({commit}){
       let userid = localStorage.getItem('userId')
-      axios.get(`http://localhost:7000/cart/${userid}`)
+      axios.get(`https://ecommerce2.gladysefirina.website/cart/${userid}`)
       .then(({data})=>{
         console.log("DATAAA",data.items)
         commit('eachCart',data.items)
@@ -91,7 +91,7 @@ export default new Vuex.Store({
     },
     addTocart({commit},objItem){
       var userid=localStorage.getItem('userId')
-      axios.post(`http://localhost:7000/cart/add/${userid}`,{
+      axios.post(`https://ecommerce2.gladysefirina.website/cart/add/${userid}`,{
         itemid:objItem.itemid,
         item_name:objItem.item_name,
         item_price:objItem.item_price,
@@ -115,7 +115,7 @@ export default new Vuex.Store({
       }) 
     },
     showAllItems({commit}){
-      axios.get('http://localhost:7000/item/get')
+      axios.get('https://ecommerce2.gladysefirina.website/item/get')
       .then(items=>{
         console.log("ITEMS",items)
         commit('showCase',items.data)
